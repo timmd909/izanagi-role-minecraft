@@ -2,5 +2,16 @@
 minecraft_user: minecraft
 minecraft_version: 1.12
 minecraft_server_port: 25565
+
+minecraft_difficulty: 3
 minecraft_level_name: Picraft
+minecraft_level_seed: raspicraft
+minecraft_level_type: DEFAULT
+minecraft_max_players: 4
 minecraft_motd: See git@github.com:timmd909/izanagi.git
+minecraft_public: false
+minecraft_pvp: false
+minecraft_spawn_protection: 16
+minecraft_view_distance: 15
+minecraft_min_memory: 256M
+minecraft_max_memory: 512M
