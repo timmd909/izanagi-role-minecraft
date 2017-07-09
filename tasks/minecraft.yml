@@ -1,0 +1,21 @@
+
+- name: Download Minecraft server
+  get_url:
+    url: "https://s3.amazonaws.com/Minecraft.Download/versions/{{ minecraft_version }}/minecraft_server.{{ minecraft_version }}.jar"
+    dest: "/home/{{ minecraft_user }}/minecraft_server.{{ minecraft_version }}.jar"
+
+- name: Fix Minecraft permissions
+  file:
+    owner: "{{ minecraft_user }}"
+    group: "{{ minecraft_user }}"
+    recurse: yes
+    path: "/home/{{ minecraft_user }}"
+
+- name: Copy Minecraft init script
+  template:
+    src: etc/init.d/minecraft.j2
+    dest: /etc/init.d/minecraft
+    mode: 0755
+
+- name: 'Install : Start Minecraft at Boot'
+  shell: update-rc.d minecraft defaults 80 80

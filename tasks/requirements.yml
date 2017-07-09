@@ -1,0 +1,21 @@
+---
+
+- name: "Create Minecraft server group"
+  group:
+    name: "{{ minecraft_user }}"
+    state: present
+
+- name: "Create Minecraft server user"
+  user:
+    name: "{{ minecraft_user }}"
+    append: yes
+    groups: minecraft
+    generate_ssh_key: yes
+    ssh_key_bits: 2048
+    ssh_key_file: .ssh/id_rsa
+    state: present
+
+- name: "Install JREv8"
+  apt:
+    name: openjdk-8-jre
+    state: latest

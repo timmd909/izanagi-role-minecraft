@@ -1,0 +1,6 @@
+---
+- include: requirements.yml
+  sudo: yes
+
+- include: minecraft.yml
+  sudo: yes
