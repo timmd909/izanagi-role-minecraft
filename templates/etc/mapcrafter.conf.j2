@@ -1,0 +1,30 @@
+output_dir = /var/www/mapcrafter
+
+[global:map]
+world = Limitless
+render_view = isometric
+render_mode = daylight
+texture_size = 16
+
+[world:Limitless]
+input_dir = /home/{{ minecraft_user }}/{{ minecraft_level_name }}/
+
+[map:isometric_night]
+name = Day
+render_mode = daylight
+rotations = top-left top-right bottom-right bottom-left
+
+[map:isometric_night]
+name = Night
+render_mode = nightlight
+rotations = top-left top-right bottom-right bottom-left
+
+[map:isometric_nether]
+name = Nether
+dimension = nether
+render_mode = cave
+
+[map:isometric_end]
+name = End
+dimension = end
+render_mode = nightlight

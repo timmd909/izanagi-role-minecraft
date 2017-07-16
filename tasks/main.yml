@@ -4,3 +4,6 @@
 
 - include: minecraft.yml
   sudo: yes
+
+- include: mapcrafter.yml
+  sudo: yes
