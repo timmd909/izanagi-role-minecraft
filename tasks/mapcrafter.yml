@@ -58,4 +58,3 @@
 - name: Enable Mapcrafter site
   shell: "a2ensite mapcrafter"
   notify: "Restart Apache"
-
