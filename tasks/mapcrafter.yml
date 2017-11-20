@@ -16,7 +16,8 @@
     - libpng-dev
 
 - name: Clone Mapcrafter
-  sudo: yes
+  become: yes
+  become_user: root
   git:
     repo: https://github.com/mapcrafter/mapcrafter.git
     dest: /usr/local/src/mapcrafter
@@ -34,7 +35,8 @@
     chdir: /usr/local/src/mapcrafter
 
 - name: Extract Minecraft textures
-  sudo: yes
+  become: yes
+  become_user: root
   shell: /usr/local/src/mapcrafter/src/tools/mapcrafter_textures.py "/home/{{ minecraft_user }}/minecraft_client.1.12.jar" "/usr/local/share/mapcrafter/textures"
 
 - name: Install Mapcrafter cron script

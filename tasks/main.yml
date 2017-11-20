@@ -1,9 +1,12 @@
 ---
 - include: requirements.yml
-  sudo: yes
+  become: yes
+  become_user: root
 
 - include: minecraft.yml
-  sudo: yes
+  become: yes
+  become_user: root
 
 - include: mapcrafter.yml
-  sudo: yes
+  become: yes
+  become_user: root
