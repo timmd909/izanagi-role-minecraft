@@ -24,39 +24,39 @@
     clone: yes
     recursive: yes
 
-- name: Build & Install Mapcrafter
-  with_items:
-    - cmake .
-    - make
-    - make install
-    - ldconfig
-  shell: "{{ item }}"
-  args:
-    chdir: /usr/local/src/mapcrafter
-
-- name: Extract Minecraft textures
-  become: yes
-  become_user: root
-  shell: /usr/local/src/mapcrafter/src/tools/mapcrafter_textures.py "/home/{{ minecraft_user }}/minecraft_client.1.12.jar" "/usr/local/share/mapcrafter/textures"
-
-- name: Install Mapcrafter cron script
-  template:
-    src: etc/cron.daily/mapcrafter.j2
-    dest: /etc/cron.daily/mapcrafter
-    mode: 0755
-
-- name: Install Mapcrafter config file
-  template:
-    src: etc/mapcrafter.conf.j2
-    dest: /etc/mapcrafter.conf
-    mode: 0644
-
-- name: Install Mapcrafter Apache config file
-  template:
-    src: etc/apache2/sites-available/mapcrafter.conf.j2
-    dest: /etc/apache2/sites-available/mapcrafter.conf
-    mode: 0644
-
-- name: Enable Mapcrafter site
-  shell: "a2ensite mapcrafter"
-  notify: "Restart Apache"
+# - name: Build & Install Mapcrafter
+#   with_items:
+#     - cmake .
+#     - make
+#     - make install
+#     - ldconfig
+#   shell: "{{ item }}"
+#   args:
+#     chdir: /usr/local/src/mapcrafter
+#
+# - name: Extract Minecraft textures
+#   become: yes
+#   become_user: root
+#   shell: /usr/local/src/mapcrafter/src/tools/mapcrafter_textures.py "/home/{{ minecraft_user }}/minecraft_client.1.12.jar" "/usr/local/share/mapcrafter/textures"
+#
+# - name: Install Mapcrafter cron script
+#   template:
+#     src: etc/cron.daily/mapcrafter.j2
+#     dest: /etc/cron.daily/mapcrafter
+#     mode: 0755
+#
+# - name: Install Mapcrafter config file
+#   template:
+#     src: etc/mapcrafter.conf.j2
+#     dest: /etc/mapcrafter.conf
+#     mode: 0644
+#
+# - name: Install Mapcrafter Apache config file
+#   template:
+#     src: etc/apache2/sites-available/mapcrafter.conf.j2
+#     dest: /etc/apache2/sites-available/mapcrafter.conf
+#     mode: 0644
+#
+# - name: Enable Mapcrafter site
+#   shell: "a2ensite mapcrafter"
+#   notify: "Restart Apache"

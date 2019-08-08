@@ -1,12 +1,13 @@
 
-- name: Download Minecraft client
-  get_url:
-    url: "https://launcher.mojang.com/mc/game/1.12/client/909823f9c467f9934687f136bc95a667a0d19d7f/client.jar"
-    dest: "/home/{{ minecraft_user }}/minecraft_client.1.12.jar"
+# - name: Download Minecraft client
+#   get_url:
+#     url: https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar
+#     dest: "/home/{{ minecraft_user }}/minecraft_client.1.12.jar"
 
 - name: Download Minecraft server
   get_url:
-    url: "https://s3.amazonaws.com/Minecraft.Download/versions/{{ minecraft_version }}/minecraft_server.{{ minecraft_version }}.jar"
+    # url: "https://s3.amazonaws.com/Minecraft.Download/versions/{{ minecraft_version }}/minecraft_server.{{ minecraft_version }}.jar"
+    url: "https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar"
     dest: "/home/{{ minecraft_user }}/minecraft_server.{{ minecraft_version }}.jar"
 
 - name: Fix Minecraft permissions
