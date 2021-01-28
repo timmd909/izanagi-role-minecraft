@@ -6,8 +6,7 @@
 
 - name: Download Minecraft server
   get_url:
-    # url: "https://s3.amazonaws.com/Minecraft.Download/versions/{{ minecraft_version }}/minecraft_server.{{ minecraft_version }}.jar"
-    url: "https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar"
+    url: "{{ minecraft_download_url }}"
     dest: "/home/{{ minecraft_user }}/minecraft_server.{{ minecraft_version }}.jar"
 
 - name: Fix Minecraft permissions
