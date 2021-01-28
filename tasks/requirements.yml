@@ -15,19 +15,8 @@
     ssh_key_file: .ssh/id_rsa
     state: present
 
-- name: "Install Java PPA (Ubuntu)"
-  apt_repository: repo=ppa:webupd8team/java
-  when: ansible_distribution == 'Ubuntu'
-
-- name: "Install Java PPA (Mint)"
-  apt_repository: repo=ppa:webupd8team/java codename=bionic
-  when: ansible_distribution == 'Linux Mint' and ansible_distribution_version == '19'
-
-- name: Automatically select the Oracle License
-  debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
-
-- name: "Install Oracle Java"
-  apt: name={{ item }} state=latest update_cache=yes
-  with_items:
-    - oracle-java8-installer
-    - oracle-java8-set-default
+- name: "Install Java"
+  apt:
+    name:
+      - openjdk-14-jre
+    state: latest
