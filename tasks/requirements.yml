@@ -20,3 +20,9 @@
     name:
       - openjdk-14-jre
     state: latest
+
+- name: Enable apache headers module
+  shell: a2enmod headers
+
+- name: Enable apache rewrite module
+  shell: a2enmod rewrite
