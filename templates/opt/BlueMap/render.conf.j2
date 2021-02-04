@@ -44,14 +44,14 @@ maps: [
 		# 0 is no ambient light, 1 is fully lighted.
 		# You can change this at any time.
 		# Default is 0
-		ambientLight: 0
+		ambientLight: 0.1
 
 		# If this is false, BlueMap tries to omit all blocks that are not visible from above-ground.
 		# More specific: Block-Faces that have a sunlight/skylight value of 0 are removed.
 		# This improves the performance of the map on slower devices by a lot, but might cause some blocks to disappear that should normally be visible.
 		# Changing this value requires a re-render of the map.
 		# Default is false
-		renderCaves: false
+		renderCaves: true
 
 		# With the below values you can limit the map-render.
 		# This can be used to ignore the nethers ceiling or render only a certain part of a world.
