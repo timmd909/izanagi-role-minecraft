@@ -9,7 +9,8 @@ minecraft_download_url: https://launcher.mojang.com/v1/objects/1b557e7b033b583cd
 
 minecraft_server_port: 25565
 
-minecraft_difficulty: 3
+# minecraft_difficulty: 3 <- huh.... seems difficulty used to be an integer...
+minecraft_difficulty: normal
 minecraft_level_name: Picraft
 minecraft_level_seed: raspicraft
 minecraft_level_type: DEFAULT
@@ -18,6 +19,12 @@ minecraft_motd: See https://github.com/timmd909/minecraft-server.git
 minecraft_public: false
 minecraft_pvp: false
 minecraft_spawn_protection: 16
-minecraft_view_distance: 15
-minecraft_min_memory: 512M
-minecraft_max_memory: 1024M
+minecraft_view_distance: 32
+minecraft_min_memory: 1024M
+minecraft_max_memory: 2048M
+
+# ambient light in main world. (default is 0)
+minecraft_map_ambient_light: 0.2
+
+# false = quicker but could misrender some stuff
+minecraft_map_render_caves: false
