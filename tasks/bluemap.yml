@@ -34,3 +34,15 @@
 
 - name: Restart Apache
   shell: service apache2 restart
+
+# BlueMap looks in the current directory, so this is necessary for the cron.d job
+- name: Add script to update the map
+  template:
+    src: "opt/BlueMap/regenerate.j2"
+    dest: "/opt/BlueMap/regenerate"
+    mode: '755'
+
+- name: Add cronjob to update the map every night
+  template:
+    src: "etc/cron.daily/update-minecraft-map.j2"
+    dest: "/etc/cron.daily/update-minecraft-map"
