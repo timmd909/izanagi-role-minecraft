@@ -37,9 +37,6 @@
     dest: /etc/init.d/minecraft
     mode: 0755
 
-- name: 'Start Minecraft at Boot'
-  shell: update-rc.d minecraft defaults 80 80
-
 - name: '(Re)start Minecraft server'
   service:
     name: minecraft
