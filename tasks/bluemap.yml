@@ -46,3 +46,4 @@
   template:
     src: "etc/cron.daily/update-minecraft-map.j2"
     dest: "/etc/cron.daily/update-minecraft-map"
+    mode: '755'
