@@ -14,6 +14,7 @@ minecraft_difficulty: normal
 minecraft_level_name: Picraft
 minecraft_level_seed: raspicraft
 minecraft_level_type: DEFAULT
+minecraft_game_mode: survival
 minecraft_max_players: 4
 minecraft_motd: See https://github.com/timmd909/minecraft-server.git
 minecraft_public: false
