@@ -20,8 +20,8 @@ minecraft_motd: See https://github.com/timmd909/minecraft-server.git
 minecraft_public: false
 minecraft_pvp: false
 minecraft_spawn_protection: 16
-# minecraft_view_distance: 32
-minecraft_view_distance: 16
+minecraft_view_distance: 32
+# minecraft_view_distance: 16
 minecraft_min_memory: 1024M
 minecraft_max_memory: 2048M
 
