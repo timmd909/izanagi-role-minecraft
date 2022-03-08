@@ -4,8 +4,10 @@ minecraft_user: minecraft
 # these can be determined by visiting
 # https://www.minecraft.net/en-us/download/server
 # Really annoyed it's not easier to download the appropriate version....
-minecraft_version: 1.16.5
-minecraft_download_url: https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar
+# minecraft_version: 1.16.5
+# minecraft_download_url: https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar
+minecraft_version: 1.18.2
+minecraft_download_url: https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar
 
 minecraft_server_port: 25565
 
