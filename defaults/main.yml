@@ -6,8 +6,10 @@ minecraft_user: minecraft
 # Really annoyed it's not easier to download the appropriate version....
 # minecraft_version: 1.16.5
 # minecraft_download_url: https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar
-minecraft_version: 1.18.2
-minecraft_download_url: https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar
+# minecraft_version: 1.18.2
+# minecraft_download_url: https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar
+minecraft_version: 1.92.3
+minecraft_download_url: https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar
 
 minecraft_server_port: 25565
 
