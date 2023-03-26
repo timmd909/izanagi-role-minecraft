@@ -7,22 +7,25 @@
 
 - name: Download BlueMap
   get_url:
-    url: 'https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v1.7.2/BlueMap-1.7.2-cli.jar'
+    url: 'https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v3.12/BlueMap-3.12-cli.jar'
     dest: /opt/BlueMap/BlueMap-cli.jar
+
+- name: Make BlueMap config directory
+  file:
+    state: directory
+    path: /opt/BlueMap/config
 
 - name: 'Copy BlueMap configuration files'
   template:
-    src: "opt/BlueMap/{{ item }}.j2"
-    dest: "/opt/BlueMap/{{ item }}"
+    src: "opt/BlueMap/config/{{ item }}.j2"
+    dest: "/opt/BlueMap/config/{{ item }}"
   with_items:
     - core.conf
-    - render.conf
+    - webapp.conf
     - webserver.conf
-
-- name: "Generate world map"
-  shell: java -jar BlueMap-cli.jar -r
-  args:
-    chdir: /opt/BlueMap
+    - maps/end.conf
+    - maps/nether.conf
+    - maps/overworld.conf
 
 - name: "Install Minecraft map website config"
   template:
@@ -47,3 +50,11 @@
     src: "etc/cron.daily/update-minecraft-map.j2"
     dest: "/etc/cron.daily/update-minecraft-map"
     mode: '755'
+
+#
+# LAST BUT NOT LEAST, RENDER!
+#
+- name: "Generate world map"
+  shell: java -jar BlueMap-cli.jar -r
+  args:
+    chdir: /opt/BlueMap
