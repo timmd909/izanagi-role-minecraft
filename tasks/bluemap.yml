@@ -10,10 +10,13 @@
     url: 'https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v3.12/BlueMap-3.12-cli.jar'
     dest: /opt/BlueMap/BlueMap-cli.jar
 
-- name: Make BlueMap config directory
+- name: Make BlueMap config directories
   file:
     state: directory
-    path: /opt/BlueMap/config
+    path: "{{ item }}"
+  with_items:
+    - '/opt/BlueMap/config'
+    - '/opt/BlueMap/config/maps'
 
 - name: 'Copy BlueMap configuration files'
   template:
